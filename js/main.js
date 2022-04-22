@@ -4,15 +4,15 @@ const clearButton = document.querySelector('.clear');
 const classicButton = document.querySelector('.classic');
 const pencilButton = document.querySelector('.pencil');
 const randomButton = document.querySelector('.random');
-
-newGridButton.addEventListener('click', newBoard);
-clearButton.addEventListener('click', clearBoard);
-
+const gridLines = document.querySelector('.grid-lines');
 
 let penColor = '';
 let colorMode = 'classic';
 
 
+newGridButton.addEventListener('click', newBoard);
+clearButton.addEventListener('click', clearBoard);
+gridLines.addEventListener('click', toggleGridLines);
 
 classicButton.addEventListener('click', e => {
   penColor = 'rgb(160, 160, 160';
@@ -45,7 +45,7 @@ function createGrid(sideLength) {
   for(let i = 0; i < totalSquares; i++) {
     let square = document.createElement('div');
     square.classList.add('square');
-    square.style.border = '1px solid rgba(0,0,0,0.1)';
+    square.classList.add('grid-line');
     gridContainer.appendChild(square);
   }
 
@@ -161,4 +161,11 @@ function clearBoard() {
 
 function randomRGB() {
   return Math.floor(Math.random() * 257);
+}
+
+function toggleGridLines() {
+  const squares = document.querySelectorAll('.square');
+  for(let square of squares) {
+    square.classList.toggle('grid-line');
+  }
 }

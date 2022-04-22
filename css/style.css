@@ -9,12 +9,16 @@ body {
 }
 
 .grid-container {
-  height: 800px;
-  width: 800px;
+  height: 700px;
+  width: 700px;
   display: grid;
   margin: 0 auto;
 }
 
 .filled {
   background-color: gray;
+}
+
+.grid-line {
+  border: 1px solid rgba(0,0,0,0.1);
 }
