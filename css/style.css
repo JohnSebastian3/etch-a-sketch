@@ -4,12 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  text-align: center;
+}
 
 .grid-container {
-  height: 760px;
-  width: 760px;
+  height: 800px;
+  width: 800px;
   display: grid;
-
+  margin: 0 auto;
 }
 
 .filled {
