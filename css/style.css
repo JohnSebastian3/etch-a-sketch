@@ -46,11 +46,14 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 20rem;
-  padding-right: 10rem;
+  padding-right: 8rem;
   margin-bottom: 3rem;
 }
 
 .options {
+  background-color: #2f3544;
+  padding: 3rem;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
