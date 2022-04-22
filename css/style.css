@@ -9,8 +9,7 @@
   height: 760px;
   width: 760px;
   display: grid;
-  /* grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr); */
+
 }
 
 .filled {

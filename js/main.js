@@ -1,7 +1,29 @@
 let gridContainer = document.querySelector('.grid-container');
 const clearButton = document.querySelector('.clear');
+const classicButton = document.querySelector('.classic');
+const pencilButton = document.querySelector('.pencil');
+const randomButton = document.querySelector('.random');
 
 clearButton.addEventListener('click', eraseBoard);
+
+let penColor = 'gray';
+
+
+classicButton.addEventListener('click', e => {
+  penColor = 'gray';
+  filled(e);
+})
+
+pencilButton.addEventListener('click', e => {
+  penColor = '#020202';
+  filled(e);
+})
+
+randomButton.addEventListener('click', e => {
+  
+  penColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`
+  filled(e);
+})
 
 function createGrid(sideLength) {
   removeAllChildNodes(gridContainer);
@@ -21,7 +43,9 @@ function createGrid(sideLength) {
   console.log(squares);
 
   for(let square of squares) {
-    square.addEventListener('mouseenter', filled);
+    square.addEventListener('mouseenter', e => {
+      filled(e);
+    });
   }
 
 }
@@ -34,14 +58,12 @@ function removeAllChildNodes(parent) {
 
 createGrid(16)
 
-// const squares = document.querySelectorAll('.square');
 
-// for(let square of squares) {
-//   square.addEventListener('mouseenter', filled);
-// }
 
 function filled(e) {
-  e.target.classList.add('filled');
+  if(e.target.tagName !== 'BUTTON') {
+    e.target.style.background = `${penColor}`;
+  }
 }
 
 
@@ -61,4 +83,8 @@ function eraseBoard(e) {
 
   createGrid(sideLength);
 
+}
+
+function randomRGB() {
+  return Math.floor(Math.random() * 257);
 }
