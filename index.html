@@ -4,24 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css"> 
   <title>Etch-A-Sketch</title>
 </head>
 <body>
-  <h1>Welcome to Our Etch-A-Sketch</h1>
-  <button class="new-grid">New Grid</button>
-  <button class="clear">Clear</button>
-  <button class="classic">Classic Mode</button>
-  <button class="pencil">Pencil Mode</button>
-  <button class="random">Random Color Mode</button>
-  <button class="grid-lines">Toggle Grid Lines</button>
-  <div class="grid-container">
-
-  </div>
 
 
-  <p>&copy; John Sebastian Guerrero 2022</p>
+  <section class="container">
+    <h1>Etch-A-Sketch</h1>
+    <h3>Choose a mode to get started!</h3>
+
+    <section class='options-sketch-container'>
+      <section class="options">
+        <button class="classic button">Classic Mode</button>
+        <button class="pencil button">Pencil Mode</button>
+        <button class="random button">Random Color Mode</button>
+        <button class="grid-lines button">Toggle Grid Lines</button>
+        <button class="new-grid button">New Grid</button>
+        <button class="clear button">Clear</button>
+      </section>
+  
+      <section class="sketch-area">
+        <div class="grid-container">
+        </div>
+      </section>
+    </section>
+    <p>Developed and Designed by John Sebastian Guerrero &copy; 2022</p>
+
+  </section>
+
+
+
   <script src="js/main.js"></script>
 </body>
 </html>

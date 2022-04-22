@@ -10,28 +10,38 @@ let penColor = '';
 let colorMode = 'classic';
 
 
-newGridButton.addEventListener('click', newBoard);
-clearButton.addEventListener('click', clearBoard);
+newGridButton.addEventListener('click', e => {
+  deactivateButtons();
+  newBoard();
+});
+
+clearButton.addEventListener('click', e => {
+  clearBoard();
+});
+
 gridLines.addEventListener('click', toggleGridLines);
 
 classicButton.addEventListener('click', e => {
+  deactivateButtons();
+  e.target.classList.toggle('active');
   penColor = 'rgb(160, 160, 160';
   colorMode = 'classic';
   setColor(e, colorMode);
-  // filled(e);
 })
 
 pencilButton.addEventListener('click', e => {
+  deactivateButtons();
+  e.target.classList.toggle('active');
   penColor = 'rgb(160, 160, 160)';
   colorMode = 'pencil';
   setColor(e, colorMode);
-  // filled(e);
 })
 
 randomButton.addEventListener('click', e => {
+  deactivateButtons();
+  e.target.classList.toggle('active');
   colorMode = 'random';
   setColor(e, colorMode);
-  // filledRandom(e);
 })
 
 function createGrid(sideLength) {
@@ -39,13 +49,14 @@ function createGrid(sideLength) {
 
   gridContainer.style['grid-template-columns'] = `repeat(${sideLength}, 1fr)`;
   gridContainer.style['grid-template-rows'] = `repeat(${sideLength}, 1fr)`;
-  gridContainer.style.border = `1px solid black`;
+
 
   const totalSquares = sideLength ** 2;
   for(let i = 0; i < totalSquares; i++) {
     let square = document.createElement('div');
     square.classList.add('square');
     square.classList.add('grid-line');
+    square.style.background = 'rgb(255,255,255)';
     gridContainer.appendChild(square);
   }
 
@@ -108,20 +119,10 @@ function filledPencil(e, currentColor) {
 function makeDarker(e, currentColor) {
   if(e.target.tagName !== 'BUTTON') {
     let newVal = currentColor - 20;
-    // console.log(`rgb(${newVal}, ${newVal}, ${newVal})`)
     e.target.style.background = `rgb(${newVal}, ${newVal}, ${newVal})`;
   }
 }
 
-// function filledPencil(e) {
-//   initialVal = 200;
-//   if(e.target.tagName !== 'BUTTON') {
-//     if(initialVal > 0) {
-//       e.target.style.background = `rgb(${initialVal}, ${initialVal}, ${initialVal})`;
-//       initialVal = initialVal - decrement;
-//     }
-//   }
-// }
 
 function filledRandom(e) {
   if(e.target.tagName !== 'BUTTON') {
@@ -132,12 +133,6 @@ function filledRandom(e) {
 
 
 function newBoard(e) {
-  console.log(e);
-  const squares = document.querySelectorAll('.square');
-  for(let square of squares) {
-    square.classList.remove('filled');
-  }
-
   let sideLength;
 
   do {
@@ -150,11 +145,10 @@ function newBoard(e) {
 
 function clearBoard() {
   const squares = document.querySelectorAll('.square');
-    // for(let square of squares) {
-    //   square.classList.remove('filled');
-    // }
+    for(let square of squares) {
+      square.style.background = 'rgb(255, 255, 255)';
+    }
     
-    createGrid(Math.sqrt(squares.length));
 }
 
 
@@ -168,4 +162,11 @@ function toggleGridLines() {
   for(let square of squares) {
     square.classList.toggle('grid-line');
   }
+}
+
+function deactivateButtons() {
+  const buttons = document.querySelectorAll('.button');
+  for(let button of buttons) {
+    button.classList.remove('active');
+  } 
 }

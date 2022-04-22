@@ -2,10 +2,58 @@
 ::before,
 ::after {
   box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 5em;
+  margin: 2rem;
+  
+}
+h3 {
+  font-weight: 300;
+  margin-bottom: 3rem;
+  font-size: 3em;
+}
+
+button {
+  font-size: 2em;
+}
+
+p {
+  font-size: 2em;
 }
 
 body {
   text-align: center;
+  font-size: 1rem;
+  font-family: 'Exo 2', sans-serif;
+  background-color: #383F51;
+  color: #50b8b4;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.options-sketch-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20rem;
+  padding-right: 10rem;
+  margin-bottom: 3rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .grid-container {
@@ -15,10 +63,28 @@ body {
   margin: 0 auto;
 }
 
-.filled {
-  background-color: gray;
+.grid-container:hover {
+  cursor: crosshair;
+}
+
+.button {
+  background-color: transparent;
+  color: #50b8b4;
+  border: 2px solid #50b8b4;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: #50b8b4;
+  color:#eee;
 }
 
 .grid-line {
   border: 1px solid rgba(0,0,0,0.1);
+}
+
+.active {
+  background-color: #50b8b4;
+  color:#eee;
 }
