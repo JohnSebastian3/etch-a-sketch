@@ -1,30 +1,23 @@
-# My Awesome Project
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+# Etch-A-Sketch
+An etch-A-sketch app that allows you to simulate the classic etch-a-sketch with your mouse. It allows multiple modes, as well as customizing the grid size and toggling grid lines.
 
 **Link to project:** https://johnsebastian3.github.io/etch-a-sketch/
 
-![alt tag](http://placecorgi.com/1200/650)
+![alt tag](etchgif.gif)
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Framework of choice
+**Tech used:** HTML, CSS, JavaScript
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
+I made this by adding a mouseover event listener to every grid cell in the sketching area. This allowed me to play around with the mouse, and achieve a sketching experience. To allow different modes, I just had to add event listeners to the mode buttons. 
 
 ## Optimizations
 *(optional)*
 
-You don't have to include this section but interviewers *love* that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+Optimizations planned are refactoring code.
 
 ## Lessons Learned:
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *whoa this is awesome* or *fuck yeah I did it!* moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+I learned a lot about event listeners during this project. Because of the nature of the way the sketching worked, I had to figure out a way to get the mouse to cause an even every time it touched a new cell. In the case of the "pencil" mode, I had to make it so that each subsequent mouseover would make the cell a little bit darker. All of these little details in the end made me more confident when working with event listeners.
 
-## Examples:
-Take a look at these couple examples that I have in my own portfolio:
 
-**Palettable:** https://github.com/alecortega/palettable
-
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
-
-**Patch Panel:** https://github.com/alecortega/patch-panel
