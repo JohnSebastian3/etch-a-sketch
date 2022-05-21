@@ -17,6 +17,6 @@ Optimizations planned are refactoring code.
 
 ## Lessons Learned:
 
-I learned a lot about event listeners during this project. Because of the nature of the way the sketching worked, I had to figure out a way to get the mouse to cause an even every time it touched a new cell. In the case of the "pencil" mode, I had to make it so that each subsequent mouseover would make the cell a little bit darker. All of these little details in the end made me more confident when working with event listeners.
+I learned a lot about event listeners during this project. Because of the nature of the way the sketching worked, I had to figure out a way to get the mouse to cause an event every time it touched a new cell. In the case of the "pencil" mode, I had to make it so that each subsequent mouseover would make the cell a little bit darker. All of these little details in the end made me more confident when working with event listeners.
 
 
