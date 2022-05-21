@@ -12,7 +12,6 @@ An etch-A-sketch app that allows you to simulate the classic etch-a-sketch with 
 I made this by adding a mouseover event listener to every grid cell in the sketching area. This allowed me to play around with the mouse, and achieve a sketching experience. To allow different modes, I just had to add event listeners to the mode buttons. 
 
 ## Optimizations
-*(optional)*
 
 Optimizations planned are refactoring code.
 
